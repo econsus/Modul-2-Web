@@ -30,12 +30,18 @@ function editTask(index) {
         renderTaskList();
     }
 }
-
+/*
+Delete task using .splice.
+Delete using the array index
+*/
 function deleteTask(index) {
     taskList.splice(index, 1);
     renderTaskList();
 }
 
+/*
+Render the task list. Called every time there is any change on the task list
+*/
 function renderTaskList() {
     const taskListElement = document.getElementById('task-list');
     taskListElement.innerHTML = '';

@@ -4,12 +4,16 @@ let prevInput = '';
 let operator = null;
 let resultCalculated = false;
 
-// Function to update the screen
+/*
+Uppdate the screen, but using input value.
+*/
 const updateScreen = (value) => {
     calculatorScreen.value = value;
 };
 
-// Function to handle number input
+/*
+Handle number input
+*/
 const inputNumber = (num) => {
     if (currentInput === '0' || resultCalculated) {
         currentInput = num;
@@ -20,7 +24,9 @@ const inputNumber = (num) => {
     updateScreen(currentInput); // Update the screen with each number input
 };
 
-// Function to handle operator input
+/*
+Handle operator input
+*/
 const inputOperator = (op) => {
     if (operator && prevInput) {
         calculate();
@@ -31,7 +37,9 @@ const inputOperator = (op) => {
     updateScreen(`${prevInput} ${operator}`); // Show the operator on the screen
 };
 
-// Function to calculate the result
+/*
+Function to calculate the result
+*/
 const calculate = () => {
     let result;
     const prev = parseFloat(prevInput);
